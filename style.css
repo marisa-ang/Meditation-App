@@ -10,8 +10,11 @@
     justify-content: space-evenly;
     align-items: center;
 }
-
-.time-select, .sound-picker, .player-container {
+.time-select, .player-container, .sound-picker {
+    width: 33.33%;
+    margin: 0px auto;
+}
+.time-select, .sound-picker {
     height: 80%;
     flex: 1;
     display: flex;
@@ -19,32 +22,10 @@
     justify-content: space-evenly;
     align-items: center;
 }
-
-.player-container {
-    position: relative;
+.time-select button {
+    padding: 15px 20px;
+    height: auto;
 }
-.player-container svg {
-    position: absolute;
-    height: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-90deg);
-    pointer-events: none;
-}
-.video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: -10;
-}
-.time-display {
-    position: absolute;
-    bottom: 10%;
-    color: white;
-    font-size: 50px;
-}
-
 .time-select button, .sound-picker button {
     color: white;
     width: 30%;
@@ -67,6 +48,42 @@
     border-radius: 50%;
     padding: 30px;
 }
+
+.player-container {
+    position: relative;
+    height: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+}
+.player-container svg {
+    position: absolute;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    pointer-events: none;
+}
+.player-container svg circle {
+    transition: all 0.2s ease-in-out;
+}
+
+.vid-container {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    z-index: -10;
+}
+.time-display {
+    position: absolute;
+    bottom: 10%;
+    color: white;
+    font-size: 50px;
+}
+
 .sound-picker button:nth-child(1) {
     background: #4972a1;
 }
@@ -74,5 +91,5 @@
     background: #a14f49;
 }
 .sound-picker button img {
-    height: 50%;
+    height: 100%;
 }
